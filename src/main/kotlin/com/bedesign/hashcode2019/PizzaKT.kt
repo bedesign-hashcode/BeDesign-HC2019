@@ -8,6 +8,8 @@ fun onThread(run: Runnable) {
 
 fun main() {
     val executor = Executors.newFixedThreadPool(8)
+
+
     executor.submit {
         println("Pippo")
     }
