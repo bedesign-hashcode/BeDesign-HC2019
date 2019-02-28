@@ -29,7 +29,7 @@ fun scorer(first: Photo, second: Photo, common: Int): Int {
 }
 
 fun main() {
-    val lines = readFromFile("/Users/mmanzi/Downloads/a_example.txt")
+    val lines = readFromFile("/Users/mmanzi/Downloads/c_memorable_moments.txt")
 
     var allHorizzontal = mutableListOf<String>()
     allHorizzontal.add(lines[0])
@@ -83,6 +83,7 @@ fun main() {
 
     var element = photos[0]
     processed.add(element.composedId)
+    element.tags.forEach { t -> inverse[t]!!.remove(element) }
     val size = photos.size
     while (processed.size < photos.size) {
         var similar = processing(photos, inverse, element, size)
@@ -111,7 +112,7 @@ fun processing(photos: MutableList<Photo>, inverse: MutableMap<String, MutableLi
     var max = - 1
     for (i in 0 .. (photos.size - 1)) {
         val score = scorer(inProcess, photos[i], occurrencies[i])
-        if (score > max) {
+        if (score > max && score > 0) {
             max = score
             maxIndex = i
         }
