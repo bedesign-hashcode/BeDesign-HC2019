@@ -4,7 +4,7 @@ import java.io.File
 
 fun readFromFile(p: String) = File(p).readLines()
 
-fun writeToFile(s: String, p: String) = File(p).printWriter().use { out -> out.println(s) }
+fun writeToFile(s: String, p: String) = File(p).printWriter().use { out -> out.print(s) }
 
 fun writeToFile(s: List<String>, p: String) = File(p).printWriter().use { out ->
     val size = s.size
