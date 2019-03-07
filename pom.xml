@@ -213,7 +213,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>${project.basedir}/src/main/kotlin</source>
+                                <source>${project.basedir}/src/com.bedesign.start.main/kotlin</source>
                             </sources>
                         </configuration>
                     </execution>

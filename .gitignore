@@ -56,7 +56,7 @@ local.properties
 .apt_generated/
 
 # Scala IDE specific (Scala & Java development for Eclipse)
-.cache-main
+.cache-com.bedesign.start.main
 .scala_dependencies
 .worksheet
 

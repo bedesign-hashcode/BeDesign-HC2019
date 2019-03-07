@@ -1,4 +1,4 @@
-package com.bedesign.hashcode2019
+package com.bedesign
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

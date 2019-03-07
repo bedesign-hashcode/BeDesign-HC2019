@@ -1,4 +1,4 @@
-package com.bedesign.hashcode2019
+package com.bedesign
 
 import kotlin.math.min
 
@@ -9,12 +9,12 @@ data class Photo(val id: Int, val type: String, val nTags: Int, val tags: List<S
 fun toPhoto(s: String, id: Int): Photo {
     if (s.isEmpty()) {
         negativeCounter -= 1
-        return Photo( negativeCounter, "", 0, listOf(), "" + negativeCounter)
+        return Photo(negativeCounter, "", 0, listOf(), "" + negativeCounter)
     }
 
     val values = s.split(" ")
-    return if (values[0] == "H") Photo(id, values[0], values[1].toInt(), (2 .. (values.size - 1)).map { values[it] }, "" + id)
-    else Photo(id, values[0], values[1].toInt(), (2 .. (values.size - 2)).map { values[it] }, values[values.size - 1].replace("-", " "))
+    return if (values[0] == "H") Photo(id, values[0], values[1].toInt(), (2..(values.size - 1)).map { values[it] }, "" + id)
+    else Photo(id, values[0], values[1].toInt(), (2..(values.size - 2)).map { values[it] }, values[values.size - 1].replace("-", " "))
 }
 
 data class Slide(val order: Int, val photos: List<Photo>) {
@@ -96,7 +96,7 @@ fun main() {
     }
     val withoutEmpty = processed.filter { !it.contains("-") }
     val result = listOf("" + withoutEmpty.size) + withoutEmpty
-    writeToFile(result , "/Users/mmanzi/Downloads/result.txt")
+    writeToFile(result, "/Users/mmanzi/Downloads/result.txt")
 
 }
 

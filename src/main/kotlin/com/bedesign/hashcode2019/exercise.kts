@@ -1,4 +1,6 @@
-import com.bedesign.hashcode2019.framework.ExerciseScript
+package com.bedesign.hashcode2019
+
+import com.bedesign.framework.ExerciseScript
 import java.io.File
 import kotlin.math.min
 
@@ -79,8 +81,8 @@ fun evaluateVerticalSlides(photos: List<Photo>): Map<Int, Slide> {
     return slides
 }
 
-val solution = ExerciseScript(Runnable {
-    val lines = File("/Users/mmanzi/workspace/octopus/BeDesign-HC2019/src/main/resources/a_example.txt").readLines()
+ExerciseScript(Runnable {
+    val lines = File("/Users/mmanzi/workspace/octopus/BeDesign-HC2019/src/com.bedesign.start.main/resources/a_example.txt").readLines()
 
     val inverseMatrix = mutableMapOf<String, MutableList<Photo>>()
     val photos = mutableListOf<Photo>()
@@ -152,4 +154,3 @@ val solution = ExerciseScript(Runnable {
     println(result)
 //    writeToFile(result, "/Users/mmanzi/workspace/octopus/BeDesign-HC2019/src/test/kotlin/com/bedesign/hashcode2019/a_example.txt.result")
 })
-fun main() { solution.run() }
