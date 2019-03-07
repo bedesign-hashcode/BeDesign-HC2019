@@ -25,6 +25,12 @@
         <main.class>com.bedesign.hashcode2019.PizzaKT</main.class>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>ktsRunnerRepo</id>
+            <url>https://dl.bintray.com/s1m0nw1/KtsRunner</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -97,6 +103,11 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit5.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.swirtz</groupId>
+            <artifactId>ktsRunner</artifactId>
+            <version>0.0.2</version>
         </dependency>
     </dependencies>
 
