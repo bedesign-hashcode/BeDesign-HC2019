@@ -66,8 +66,9 @@ public class SlideShow {
 
         result.add(0, String.valueOf(result.size()));
         FileUtils.writeLines(new File(output), result);
-        System.out.println("computed: " + computedIdx.size());
         System.out.println("score: " + points);
+        System.out.println("computed: " + computedIdx.size());
+        System.out.println("computed distinct: " + computedIdx.stream().distinct().count());
     }
 
     public static int findBestMatch(int idx) {
@@ -87,7 +88,8 @@ public class SlideShow {
             int photoIdx = entry.getKey();
             int score = score(idx, photoIdx, entry.getValue().intValue());
             entryToScore[i] = score;
-            if (maxScore < score || maxScore == score && photoTags[photoIdx].length <= photoTags[maxScoreIdx].length) {
+            if (maxScore < score || maxScore == score &&
+                    photoTags[photoIdx].length < photoTags[maxScoreIdx].length) {//better same score with less tags
                 maxScore = score;
                 maxScoreIdx = photoIdx;
             }
